@@ -1,0 +1,167 @@
+<script>
+  var xyValues = [
+    {x:50, y:7},
+    {x:60, y:8},
+    {x:70, y:8},
+    {x:80, y:9},
+    {x:90, y:9},
+    {x:100, y:9},
+    {x:110, y:10},
+    {x:120, y:11},
+    {x:130, y:14},
+    {x:140, y:14},
+    {x:150, y:15}
+  ];
+  
+  new Chart("myChart", {
+    type: "scatter",
+    data: {
+      datasets: [{
+        pointRadius: 4,
+        pointBackgroundColor: "rgb(0,0,255)",
+        data: xyValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      scales: {
+        xAxes: [{ticks: {min: 40, max:160},}],
+        yAxes: [{ticks: {min: 6, max:16},}],
+      }
+    }
+  });
+  </script>
+  <script>
+  
+      var student= "{{student}}"
+      var Total_present= "{{Total_present}}"
+      var Total_absent = "{{Total_absent}}"
+     
+
+      var xValues = ["student", "present", "absent"];
+      var yValues = [];
+      var barColors = ["red", "green","blue"];
+
+      yValues[0]=student
+      yValues[1]=Total_present
+      yValues[2]=Total_absent
+     
+
+      console.log(student)
+      console.log(Total_present)
+      console.log(Total_absent)
+      
+      new Chart("myBare", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: {display: true},
+          title: {
+            display: true,
+            text: "World Wine Production 2018"
+          }
+        }
+      });
+      </script>
+      <script>
+          var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+          var yValues = [55, 49, 44, 24, 15];
+          var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797",
+            "#e8c3b9",
+            "#1e7145"
+          ];
+          
+          new Chart("myCirculaire", {
+            type: "pie",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: "World Wide Wine Production 2018"
+              }
+            }
+          });
+          </script>
+          <script>
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+              
+              function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ['Contry', 'Mhl'],
+                ['Italy',55],
+                ['France',49],
+                ['Spain',44],
+                ['USA',24],
+                ['Argentina',15]
+              ]);
+              
+              var options = {
+                title:'World Wide Wine Production'
+              };
+              
+              var chart = new google.visualization.BarChart(document.getElementById('myB'));
+                chart.draw(data, options);
+              }
+              </script>
+              
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Contry', 'Mhl'],
+['Italy',54.8],
+['France',48.6],
+['Spain',44.4],
+['USA',23.9],
+['Argentina',14.5]
+]);
+
+var options = {
+title:'World Wide Wine Production'
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('myCIR'));
+chart.draw(data, options);
+}
+</script>
+<script>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  
+  function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Contry', 'Mhl'],
+    ['Italy',54.8],
+    ['France',48.6],
+    ['Spain',44.4],
+    ['USA',23.9],
+    ['Argentina',14.5]
+  ]);
+  
+  var options = {
+    title:'World Wide Wine Production',
+    is3D:true
+  };
+  
+  var chart = new google.visualization.PieChart(document.getElementById('myd'));
+    chart.draw(data, options);
+  }
+  </script>  
